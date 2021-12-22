@@ -56,6 +56,12 @@ mysql 8.0.27
     docker compose exec app php artisan migrate
     ```
 
+1. エラーなどの確認作業が終了したらコンテナを破棄する
+
+    ```
+    docker compose down
+    ```
+
 基本的には上記コマンドを入力すればプレビューできます。<br>
 その他コマンドを入力する必要がある場合は`docker compose exec app`以降に実行したいコマンドを入れて実行してください。
 
