@@ -22,8 +22,13 @@ mysql 8.0.27
     ```
     docker compose ps
     ```
+    ![service_status](https://user-images.githubusercontent.com/66292801/147135163-03781fc8-2d65-4a94-a445-7fea003121cc.png)
+
 4. backendディレクトリ内の.envを編集する
-1. .envの内容を反映する
+
+    ![project_env](https://user-images.githubusercontent.com/66292801/147135560-e033e3af-4c25-4d32-9bfb-63b135047368.png)
+
+6. .envの内容を反映する
 
     ```
     docker compose exec app php artisan config:cache
