@@ -4,8 +4,18 @@ nginx 1.20.2<br>
 mysql 8.0.27
 
 # Usage
-1. 受講生から共有されたプロジェクトをlaravel_on_m1macディレクトリ配下に移動させる(.zipはNG)
-1. 以下のコマンドで受講生のプロジェクトをbackendディレクトリ配下にコピー(node_modulesを除外)
+1. リポジトリをクローンする<br>
+    SSH
+    ```
+    git clone git@github.com:nabecima/laravel_on_m1mac.git
+    ```
+    HTTPS
+    ```
+    git clone https://github.com/nabecima/laravel_on_m1mac.git
+    ```
+    
+3. 受講生から共有されたプロジェクトをクローンしたディレクトリ配下に移動させる(.zipはNG)
+4. 以下のコマンドで受講生のプロジェクトをbackendディレクトリ配下にコピー(node_modulesを除外)
 
     ```
     rsync -r ./アプリフォルダ名/. ./backend --exclude '/node_modules/'
