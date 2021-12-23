@@ -4,7 +4,7 @@ nginx 1.20.2<br>
 mysql 8.0.27
 
 # Usage
-1. リポジトリをクローンする<br>
+1. リポジトリをクローンする。<br>
     SSH
     ```
     git clone git@github.com:nabecima/laravel_on_m1mac.git
@@ -13,50 +13,47 @@ mysql 8.0.27
     ```
     git clone https://github.com/nabecima/laravel_on_m1mac.git
     ```
-    
-3. 受講生から共有されたプロジェクトをクローンしたディレクトリ配下に移動させる(.zipはNG)
-4. 以下のコマンドで受講生のプロジェクトをbackendディレクトリ配下にコピー(node_modulesを除外)
 
-    ```
-    rsync -r ./アプリフォルダ名/. ./backend --exclude '/node_modules/'
-    ```
-1. docker-compose.ymlと同じ階層にある.envの`DB_NAME`をプロジェクトで使用するDB名にする。
-2. コンテナをバックグラウンドで起動
+3. 受講生から共有されたプロジェクトをクローンしたディレクトリ配下に移動させる(.zipはNG)
+4. プロジェクト名(フォルダ名)を`backend`にリネーム
+5. `node_modules`を削除
+6. docker-compose.ymlと同じ階層にある.envの`DB_NAME`をプロジェクトで使用するDB名にする
+7. コンテナをバックグラウンドで起動
 
     ```
     docker compose up -d
     ```
 
-3. コンテナが起動しているか確認(STATUSがrunningになっていればOK)
+8. コンテナが起動しているか確認(STATUSがrunningになっていればOK)
 
     ```
     docker compose ps
     ```
     ![service_status](https://user-images.githubusercontent.com/66292801/147135163-03781fc8-2d65-4a94-a445-7fea003121cc.png)
 
-4. backendディレクトリ内の.envを編集する
+9. backendディレクトリ内の.envを編集
 
     ![project_env](https://user-images.githubusercontent.com/66292801/147135560-e033e3af-4c25-4d32-9bfb-63b135047368.png)
 
-6. .envの内容を反映する
+10. .envの内容を反映
 
     ```
     docker compose exec app php artisan config:cache
     ```
 
-1. パッケージをインストール
+11. パッケージをインストール
 
     ```
     docker compose exec app npm install
     ```
 
-1. マイグレーションファイルを適用する
+12. マイグレーションファイルを適用する
 
     ```
     docker compose exec app php artisan migrate
     ```
 
-1. エラーなどの確認作業が終了したらコンテナを破棄する
+13. エラーなどの確認作業が終了したらコンテナを破棄する
 
     ```
     docker compose down
