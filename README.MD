@@ -15,6 +15,7 @@ mysql 8.0.27
     ```
 
 1. 受講生から共有されたプロジェクトをクローンしたディレクトリ配下に移動させ、プロジェクト名(フォルダ名)を`backend`に変更する
+
     ![change_foldername](https://user-images.githubusercontent.com/66292801/164203245-bbbc4d40-fd9a-4363-9192-3c01f9f6e820.gif)
 1. Laravelのプロジェクトファイルに`.env`がない場合、カレントディレクトリがlaravel_on_m1macの状態で以下のコマンドを実行し、`.env.example`をコピーして`.env`を作成する
     ```
